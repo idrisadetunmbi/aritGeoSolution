@@ -4,7 +4,7 @@ module.exports = {
 
         // tests invalid input - inputs that are not arrays
         if(!(inputArray instanceof Array)) {
-            throw new Error("input should be an array");
+            return undefined;
         }
 
         // tests if input array is not empty
@@ -15,13 +15,13 @@ module.exports = {
         // input array cannot be tested as either arithmetic or geometric 
         // if number of elements are less than 3
         // function should return -1 in this case stating inputArray is neither
-        if (inputArray.length === 1 || inputArray.length === -2) {
+        if ((inputArray.length === 1) || (inputArray.length === 2)) {
             return -1;
         }
 
         // tests if elements of input are all numbers
         if (inputArray.some(isNaN)) {
-            throw new Error("input array contains invalid elements");
+            return undefined;
         }
 
         if (testArithmetic(inputArray)) {
