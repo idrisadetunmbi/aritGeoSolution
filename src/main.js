@@ -24,11 +24,11 @@ module.exports = {
             return undefined;
         }
 
-        if (testArithmetic(inputArray)) {
+        if (isArithmetic(inputArray)) {
             return "Arithmetic";
         }
 
-        if (testGeometric(inputArray)) {
+        if (isGeometric(inputArray)) {
             return "Geometric";
         }
 
@@ -38,36 +38,28 @@ module.exports = {
     },
 }
 
-function testArithmetic(inputArray) {
-    let commonDifference = inputArray[1] - inputArray[0];            
-    let arrayOfDifs = [];
-
-    for(let i = 1; i < inputArray.length; i++) {
-        let diff = inputArray[i+1] - inputArray[i];
-        arrayOfDifs.push(diff);
-    }    
-    // remove NaN which is the last element of the list due to above loop
-    arrayOfDifs = arrayOfDifs.splice(0, arrayOfDifs.length - 1);         
-    
-    // if every element of arrayOfDifs is equal to commonDifference
-    if(arrayOfDifs.every((element) => { return element === commonDifference;})) { 
-        return true
+function isArithmetic(inputArray) {
+    let firstTerm = inputArray[0],
+        commonDifference = inputArray[1] - inputArray[0];
+        
+    for(let n = 2; n < inputArray.length; n++) {
+      let nthTerm = firstTerm + (n * commonDifference);
+      if(inputArray[n] !== nthTerm ) {
+        return false
+      }
     }
-    return false;
+    return true;
 }
 
-function testGeometric(inputArray) {
-    let commonRatio = inputArray[1]/inputArray[0];            
-    let arrayOfRatios = [];
-
-    for(let i = 1; i < inputArray.length; i++) {
-        let ratio = inputArray[i+1]/inputArray[i];
-        arrayOfRatios.push(ratio);
-    }    
-    arrayOfRatios = arrayOfRatios.splice(0, arrayOfRatios.length - 1);
-
-    if(arrayOfRatios.every((element) => { return element === commonRatio;})) { 
-        return true
+function isGeometric(inputArray) {
+    let firstTerm = inputArray[0],
+        commonRatio = inputArray[1] / inputArray[0];
+        
+    for(let n = 2; n < inputArray.length; n++) {
+      let nthTerm = firstTerm * (Math.pow(commonRatio, n));
+      if(inputArray[n] !== nthTerm ) {
+        return false
+      }
     }
-    return false;
+    return true;
 }
