@@ -19,7 +19,7 @@ module.exports = {
             return -1;
         }
 
-        // tests if elements of input are all numbers
+        // checks if elements of input are all numbers
         if (inputArray.some(isNaN)) {
             return undefined;
         }
@@ -46,7 +46,10 @@ function testArithmetic(inputArray) {
         let diff = inputArray[i+1] - inputArray[i];
         arrayOfDifs.push(diff);
     }    
-    arrayOfDifs = arrayOfDifs.splice(0, arrayOfDifs.length - 1);            
+    // remove NaN which is the last element of the list due to above loop
+    arrayOfDifs = arrayOfDifs.splice(0, arrayOfDifs.length - 1);         
+    
+    // if every element of arrayOfDifs is equal to commonDifference
     if(arrayOfDifs.every((element) => { return element === commonDifference;})) { 
         return true
     }
