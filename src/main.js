@@ -32,7 +32,7 @@ module.exports = {
             return "Geometric";
         }
 
-        // default case when inputArray is neither
+        // default case when inputArray is neither arithmetic nor geometric
         return -1;
 
     },

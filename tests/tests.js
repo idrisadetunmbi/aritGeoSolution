@@ -4,7 +4,7 @@ const aritGeo = require('../src/main.js');
 
 describe("aritGeo", () => {
 
-    describe("handle invalid input", () => {
+    describe("handles invalid input", () => {
         it("should return undefined for a string", () => {
            assert.equal(aritGeo.aritGeo((" "), undefined)); 
         });
@@ -47,6 +47,14 @@ describe("aritGeo", () => {
 
         it("should return \"Geometric\" ", () => {
            assert.equal(aritGeo.aritGeo([100, 10, 1, 0.1]), "Geometric"); 
+        });
+
+        it("should return -1 if input is neither arithmetic nor geometric ", () => {
+           assert.equal(aritGeo.aritGeo([12, 24, 36, 48, 61]), -1); 
+        });
+
+        it("should return -1 if input is neither arithmetic nor geometric ", () => {
+           assert.equal(aritGeo.aritGeo([12, 36, 145, 618]), -1); 
         });
 
         
