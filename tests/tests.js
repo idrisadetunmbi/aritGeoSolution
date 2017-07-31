@@ -57,6 +57,10 @@ describe("aritGeo", () => {
            assert.equal(aritGeo.aritGeo([12, 36, 145, 618]), -1); 
         });
 
+        it("should return -1 if input array is empty", () => {
+           assert.equal(aritGeo.aritGeo([12, 36, 145, 618]), -1); 
+        });
+
         
     
     });
