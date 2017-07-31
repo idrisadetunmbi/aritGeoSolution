@@ -1,0 +1,24 @@
+{
+  "name": "aritgeosolution",
+  "version": "1.0.0",
+  "description": "solution to the andela bootcamp WK1/Day 1 aritGeo problem ",
+  "main": "src/main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/tests.js"
+  },
+  "keywords": [
+    "Andela",
+    "bootcamp",
+    "aritGeo",
+    "solution"
+  ],
+  "author": "Idris Adetunmbi",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  }
+}
