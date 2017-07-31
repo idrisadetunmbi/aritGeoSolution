@@ -33,28 +33,28 @@ describe("aritGeo", () => {
 
     describe("handles correct input", () => {
         
-        it("should return \"Arithmetic\" ", () => {
+        it("should return \"Arithmetic\" for input [1, 2, 3, 4, 5]", () => {
            assert.equal(aritGeo.aritGeo([1, 2, 3, 4, 5]), "Arithmetic"); 
         });
 
-        it("should return \"Geometric\" ", () => {
+        it("should return \"Geometric\" [3, 6, 12, 24, 48]", () => {
            assert.equal(aritGeo.aritGeo([3, 6, 12, 24, 48]), "Geometric"); 
         });
 
-        it("should return \"Arithmetic\" ", () => {
+        it("should return \"Arithmetic\" [10, 8, 6, 4, 2, 0]", () => {
            assert.equal(aritGeo.aritGeo([10, 8, 6, 4, 2, 0]), "Arithmetic"); 
         });
 
-        it("should return \"Geometric\" ", () => {
+        it("should return \"Geometric\" [100, 10, 1, 0.1]", () => {
            assert.equal(aritGeo.aritGeo([100, 10, 1, 0.1]), "Geometric"); 
         });
 
-        it("should return -1 if input is neither arithmetic nor geometric ", () => {
+        it("should return -1 if input is neither arithmetic nor geometric: [12, 24, 36, 48, 61]", () => {
            assert.equal(aritGeo.aritGeo([12, 24, 36, 48, 61]), -1); 
         });
 
-        it("should return -1 if input is neither arithmetic nor geometric ", () => {
-           assert.equal(aritGeo.aritGeo([12, 36, 145, 618]), -1); 
+        it("should return -1 if input is neither arithmetic nor geometric [12, 24, 36, 48, 61]", () => {
+           assert.equal(aritGeo.aritGeo([12, 36, 145, 618]), -1);
         });
 
         it("should return 0 if input array is empty", () => {
